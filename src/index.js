@@ -21,18 +21,25 @@ class App extends Component{
     render(){
         const { musicians } = this.state;
         return (
-        <ul>
+          <div>
+              <h1>TUNE WORLD</h1>
+          <ul>
           {
                musicians.map(musician => {
                 return (
-                <li>{musician.name}</li>
+                <li key = { musician.id }>
+                    <a href = {`#${musician.id}`}>
+                    {musician.name}
+                    </a>
+                </li>
                 )
             })
           }
         </ul>
+        </div>
         );
     }
 }
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+// ReactDOM.render(<App />, document.querySelector('#root'));
 
