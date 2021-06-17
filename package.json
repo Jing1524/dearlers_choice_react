@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "build:dev": "npm run build -- --watch --mode=development",
+    "start:dev": "npm run build:dev & nodemon server --ignore dist/ --ignore src/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "nodemon server --ignore dist/ --ignore src/"
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -20,6 +25,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "faker": "^5.5.3",
     "pg": "^8.6.0",
     "sequelize": "^6.6.2"
   }
