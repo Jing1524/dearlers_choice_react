@@ -6,7 +6,7 @@ const path = require('path');
 
 const { syncAndSeed, models: { Musician, Album, Tune}} = require('./db');
 
-// app.use('/dist', express.static(path.join(__dirname. 'dist')));
+app.use('/dist', express.static(path.join(__dirname, 'dist')));
 
 app.get('/',(req, res, next)=> res.sendFile(path.join(__dirname, 'index.html')));
 
