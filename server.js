@@ -7,12 +7,13 @@ const path = require('path');
 const { syncAndSeed, models: { Musician, Album, Tune}} = require('./db');
 
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.get('/',(req, res, next)=> res.sendFile(path.join(__dirname, 'index.html')));
 
 app.get('/api/musicians', async(req, res, next)=>{
     try {
-        console.log("========================", Musician.findAll());
+        console.log("========================", await Musician.findAll());
       res.send(await Musician.findAll({
           attributes:{
               exclude: ['bio']

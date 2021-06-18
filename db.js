@@ -88,26 +88,30 @@ const syncAndSeed = async()=>{
     const [soloMonk,straightNoChaser,kindOfBlue,bagsGroove,giantSteps,ladyInSatin,blueMoon] = await Promise.all(
         albums.map(name => Album.create(name)) 
      )
-    const [rudyMyDear,bemsharSwing,soWhat,footPrint,aLoveSupreme,findAndMellow,amIBlue] = await Promise.all(
+    const [rubyMyDear,bemsharSwing,soWhat,footPrint,aLoveSupreme,findAndMellow,amIBlue] = await Promise.all(
         tunes.map(name => Tune.create(name)) 
      )
 
-    soloMonk.artistId = monk.id;
-    straightNoChaser.artistId = monk.id;
-    kindOfBlue.artistId = milesDavis.id;
-    bagsGroove.artistId = milesDavis.id;
-    giantSteps.artistId = coltrane.id;
-    ladyInSatin.artistId = billieHoliday.id;
-    blueMoon.artistId = billieHoliday.id;
+    // soloMonk.artistId = monk.id;
+    // straightNoChaser.artistId = monk.id;
+    // kindOfBlue.artistId = milesDavis.id;
+    // bagsGroove.artistId = milesDavis.id;
+    // giantSteps.artistId = coltrane.id;
+    // ladyInSatin.artistId = billieHoliday.id;
+    // blueMoon.artistId = billieHoliday.id;
+
+    rubyMyDear.musicianId = monk.id;
+    rubyMyDear.albumId = soloMonk.id;
 
     await Promise.all([
-      soloMonk.save(),
-      straightNoChaser.save(),
-      kindOfBlue.save(),
-      bagsGroove.save(),
-      giantSteps.save(),
-      ladyInSatin.save(),
-      blueMoon.save()
+    //   soloMonk.save(),
+    //   straightNoChaser.save(),
+    //   kindOfBlue.save(),
+    //   bagsGroove.save(),
+    //   giantSteps.save(),
+    //   ladyInSatin.save(),
+    //   blueMoon.save(),
+      rubyMyDear.save()
     ])
 
    
